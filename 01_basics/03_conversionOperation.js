@@ -25,3 +25,25 @@ let someNumber = 15
 let stringNumber = String(someNumber)
 console.log(typeof stringNumber);
 console.log(stringNumber);
+
+// --------------- Operations ---------------
+
+let value = 3
+let negValue = -value
+console.log(negValue);
+console.log(-value);
+
+let str1 = "Hello"
+let str2 = "AKS"
+let str3 = str1+str2
+console.log(str3);
+console.log(str1 + str2);
+
+console.log("1" + 2);
+console.log(1 + "2");
+console.log("1" + 2 + 2);
+console.log(1 + 2 + "2");
+
+let counter = 100;
+++counter;
+console.log(counter);
