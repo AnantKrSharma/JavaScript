@@ -34,3 +34,29 @@ const myFunction = function(){  //Function
 console.log(typeof heroes);
 console.log(typeof myObj);
 console.log(typeof myFunction);
+
+
+// ************************************************************
+
+
+//  Types of memory in JavaScript : 
+//Stack Memory (used by Primitive Datatypes) and Heap Memory (used by Non-Primitive Datatypes)
+
+//Stack Memory
+
+let myName = "AnantKrSharma" //Primitive Datatype
+let name2 = myName //here, we get a Copy of myName.
+name2 = "AditiTyagi"
+console.log(myName);
+console.log(name2);
+
+//Heap Memory
+
+let userOne={                //Non-Primitive Datatype
+    email: "user@gmail.com",
+    upi: "user@hdfc"
+}
+let userTwo = userOne;      //here, we get the actual Reference of userOne.
+userTwo.email = "user@yahoo.com"
+console.log(userOne.email);
+console.log(userTwo.email);
