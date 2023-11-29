@@ -1,0 +1,72 @@
+-------------------------   JavaScript Execution Context   -------------------------
+
+
+> The Global Execution Context is created when a JavaScript script first starts to run,
+  and it represents the global scope in JavaScript.The Global Execution Context is the 
+  default execution context that is created by the JavaScript engine. All the global 
+  code that is not inside a function or object will be executed inside the 
+  Global Execution Context.
+
+> A Function Execution Context is created whenever a function is called, representing 
+  the function's local scope. 
+
+> Function Execution Context is an abstract data type that represents the environment 
+  in which a function is executed. It contains the following information:
+    The function's name
+    The function's arguments
+    The function's local variables
+    The function's return value
+    The function's scope chain
+    
+> The Function Execution Context is created when the function is called and destroyed 
+  when the function returns. The Function Execution Context is stored on the execution 
+  stack.
+
+> --- Phases of JavaScript progaram execution: ---   ** [look at 05-example for context] **
+
+  1. Global Execution Phase
+
+  2. Memory Creation Phase
+            val1 -> undefined        \
+            val2 -> undefined         |
+            addNum -> defination      | -> 1st Cycle 
+            result1 -> undefined      |
+            result2 -> undefined     /
+
+  3. Execution Phase
+            val1 <- 10
+            val2 <- 5  
+                       _____________________________                        
+            addNum -> |  New Variable Environment   |  **Everytime a function is executed, new 
+                      |             +               |    Memory Creation Phase and new Execution 
+                      |      Execution Thread       |    Phase are being made for that function.
+                      |_____________________________|    And after the execution, it is deleted.
+                                  /    \
+                                 /      \
+                                /        \
+                               /          \
+                              /            \
+                         Memory            Execution 
+                         Phase              Context
+                    val1 -> undefined       num1 <- 10
+                    val2 -> undefined       num2 <- 5
+                    total -> undefined      total <- 15 (this total will be returned to Global Execution Context)
+            
+            result1 <- 15
+                       _____________________________
+            addNum -> |  New Variable Environment   |
+                      |             +               |
+                      |      Execution Thread       |
+                      |_____________________________|
+                                  /    \
+                                 /      \
+                                /        \
+                               /          \
+                              /            \
+                         Memory            Execution 
+                         Phase              Context
+                    val1 -> undefined       num1 <- 10
+                    val2 -> undefined       num2 <- 2
+                    total -> undefined      total <- 12 (this total will be returned to Global Execution Context)
+            
+            result2 <- 12
