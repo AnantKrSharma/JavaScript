@@ -1,0 +1,26 @@
+The for...of loop is used to iterate over iterable objects such as arrays, strings, maps, sets, etc. It is a new loop introduced in ES6. The forEach() method is also used to loop through arrays, but it uses a function differently than the classic for loop. It passes a callback function for each element of an array together with the below parameters:
+
+Current Value (required): The value of the current array element.
+Index (optional): The index number of the current element.
+Array (optional): The array object the current element belongs to.
+We need a callback function to loop through an array by using the forEach() method. For every single element of the array, the function will be executed. The callback should have at least one parameter which represents the elements of an array.
+
+The for...in loop is used to iterate over all enumerable properties of an object. It is not recommended to use for...in loop to iterate over arrays because it can iterate over non-index properties as well.
+
+Here are some differences between for...of, forEach(), and for...in loops:
+
+for...of loop:
+It works on any iterable.
+It supports all kinds of control flow in the loop body, like continue, break, return, yield, and await.
+It is more readable.
+Performance is not a concern, in modern engines all loop styles are equivalent.
+forEach() loop:
+It is slower than the traditional loop in performance.
+The break statement cannot be used because of the callback function.
+It is all about doing side effects, so an imperative-looking loop fits that purpose better.
+for...in loop:
+It iterates over all enumerable properties of an object.
+It is not recommended to use for...in loop to iterate over arrays because it can iterate over non-index properties as well.
+It is slower than the traditional loop in performance.
+It is not recommended to use for...in loop to iterate over arrays because it can iterate over non-index properties as well.
+It is not recommended to use for...in loop to iterate over arrays because it can iterate over non-index properties as well.
