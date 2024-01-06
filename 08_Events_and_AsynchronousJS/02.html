@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Asynchronous</h1>
+
+    <button id="stop">Stop</button>
+
+</body>
+
+<script>
+
+    setTimeout(function(){      // setTimeout() function executes a particular function after a gap of specified time.
+        console.log("Anant");
+    }, 5000);
+
+    const nameFn = function(){
+        console.log("Aditi");
+    }
+
+    setTimeout(nameFn, 3000)  // here, nameFn is passed in setTimeout as a handler.
+
+
+    // setInterval(function(){     // setInterval() function executes a particular function repeatedly after a gap of specified time interval.
+    //     console.log("Kr Sharma");
+    // }, 3000)
+
+
+    // document.querySelector('h1').innerHTML = "Asynchronous nature of JS"
+    const changeHeadFn = function(){
+        document.querySelector('h1').innerHTML = "Asynchronous nature of JS"
+        document.querySelector('h1').style.color = "red"
+    }
+
+    const changeHead = setTimeout(changeHeadFn, 3000)
+
+    document.querySelector('#stop').addEventListener('click', function(e){
+        clearTimeout(changeHead)
+        console.log("STOPPED");
+    })  
+    
+/* clearTimeout function is used to disable a setTimeout function. In clearTimeout function, 
+we have to pass the reference of setTimeout function. Here, we have added an event listener,
+which will stop the working of the setTimeout function through clearTimeout function as soon 
+as you click the 'stop' button (before 3 seconds). */
+
+
+</script>
+
+</html>
