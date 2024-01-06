@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: rgb(60, 60, 144); color: white; font-weight: bold;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+
+    // Inspect this in live server Console.
+
+    /* An HTMLCollection is an array-like collection (list) of HTML elements.
+       The elements in a collection can be accessed by index (starts at 0).
+       The length Property returns the number of elements in the collection. 
+       An HTMLCollection is almost the same as a NodeList. 
+       A NodeList is an array-like collection (list) of Node Objects.
+       The nodes in a NodeList can be accessed by index (starts at 0).
+       The length property returns the number of nodes in a NodeList.*/
+    
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.backgroundColor = "orange"
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const day1 = document.querySelector('.day')
+    console.log(day1.parentElement);
+    console.log(day1.nextElementSibling);
+
+    console.log("NODES: ", parent.childNodes);  // * important *
+
+</script>
+
+</html>

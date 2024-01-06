@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: rgb(60, 60, 144); color: white; font-weight: bold;">
+    
+</body>
+
+<script>
+
+    const divElement = document.createElement('div')
+    // The createElement() method creates an element node.
+
+    console.log(divElement);
+    divElement.className = "mainDiv"
+    divElement.id = "mainId"
+    divElement.setAttribute("title", "GeneratedTitle")
+    divElement.style.backgroundColor = "orange"
+    divElement.style.padding = "10px"
+    
+    // divElement.innerHTML = "div through DOM"
+    document.createTextNode("div through DOM")
+    const addText = document.createTextNode("div through DOM")
+
+    divElement.appendChild(addText)
+    document.body.appendChild(divElement)
+    // The appendChild() method appends a node (element) as the last child of an element.
+
+</script>
+
+</html>
