@@ -1,2 +1,1 @@
-# JS-YT
-JavaScript code repo.
+## JavaScript code repo.
